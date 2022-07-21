@@ -1,12 +1,18 @@
+#!/usr/bin/python3
+
+# built in 
 import os
 import sys
 import argparse
+
+# 3rd party imports
 from alive_progress import alive_bar
 import pandas as pd
 import numpy as np
 
+__author__ = "Connor DeJohn"
+__version__ = "0.1"
 """
-Connor DeJohn
 July 2022
 
 script to rename files
@@ -51,11 +57,11 @@ if __name__=="__main__": # ls_to_excel is run from command line
                 if not args.recur: # break if not recursive check
                     break
         elif args.source.find(".txt") > 0:
-            print(".txt is not implemented yet. please use an excel file.")
+            print("[*] .txt is not implemented yet. please use an excel file.")
             quit()
         else:
             if not args.prefix: # if prefix is also empty
-                print("The source file was not found. Please check the spelling.")
+                print("[*] The source file was not found. Please check the spelling.")
                 quit()
                 
                 

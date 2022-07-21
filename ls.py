@@ -1,10 +1,16 @@
+#!/usr/bin/python3
+
+# built in
 import os
 import sys
 import argparse
+
+# 3rd party imports
 import xlsxwriter
 
+__author__ = "Connor DeJohn"
+__version__ = "0.1"
 """
-Connor DeJohn
 July 2022
 
 Similar script to ls but translating to python.
@@ -102,12 +108,3 @@ if __name__=="__main__": # ls_to_excel is run from command line
     # how to put out results
     if not args.noex:
         ls_to_table(txt_f,xname)
-        
-else: # ls_to_excel is imported from somewhere else
-    pass # not implemented - idk when it would be used
-    
-    
-    
-    
-    
-    

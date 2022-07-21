@@ -1,13 +1,19 @@
+#!/usr/bin/python3
+
+# built in 
 import os
 import sys
 import argparse
+
+# 3rd party imports
 from alive_progress import alive_bar
 from multiprocessing import Process
 from PyPDF2 import PdfFileReader, PdfMerger
 import pathlib
 
+__author__ = "Connor DeJohn"
+__version__ = "0.1"
 """
-Connor DeJohn
 July 2022
 
 script to merge pdfs in cwd
@@ -19,8 +25,7 @@ Includes options to:
 """
 
 
-
-def thread_it(SAVING_FLDR_NAME,files,root,smethod): #SAVING_FLDR_NAME, os.path.join(root), files
+def thread_it(SAVING_FLDR_NAME,files,root,smethod):
     '''
     fpath - 
     d - directory name
@@ -49,7 +54,7 @@ def thread_it(SAVING_FLDR_NAME,files,root,smethod): #SAVING_FLDR_NAME, os.path.j
             if f.find(".pdf")>0:
                 merger.append(PdfFileReader(open(root+"\\"+f, 'rb')))
         except:
-            print("\nProbable error with tag %s."%(dir_name))
+            print("\n[*] Probable error with tag %s."%(dir_name))
             
     os.makedirs(SAVING_FLDR_NAME, exist_ok=True) # mkdir if not there, suppresses error if there
     merger.write(SAVING_FLDR_NAME +"\\"+ dir_name + ".pdf")
@@ -75,7 +80,7 @@ if __name__=="__main__": # ls_to_excel is run from command line
             sortmethod = 0
         case "d":
             sortmethod = 0
-            if input("not implemented yet. will merge by alphabetical. press 'n' to quit, anything else to continue: ") == "n":
+            if input("[*] not implemented yet. will merge by alphabetical. press 'n' to quit, anything else to continue: ") == "n":
                 quit()
         case _:
             sortmethod = 0
@@ -107,16 +112,6 @@ if __name__=="__main__": # ls_to_excel is run from command line
             if not args.recur:
                 break
         p.join()
-            
-            
-    print('\t** All files copied into respective folders. Please review notes above about possible problems. **')
-
-    
-else: # ls_to_excel is imported from somewhere else
-    pass # not implemented - idk when it would be used
-    
-    
-    
     
     
     

@@ -1,12 +1,18 @@
-import pandas as pd
-import numpy as np
-from PyPDF2 import PdfFileReader, PdfFileWriter
-import argparse
+#!/usr/bin/python3
+
+# built in
 import os
 import sys
+import argparse
 
+# 3rd party imports
+import numpy as np
+import pandas as pd
+from PyPDF2 import PdfFileReader, PdfFileWriter
+
+__author__ = "Connor DeJohn"
+__version__ = "0.1"
 """
-Connor DeJohn
 July 2022
 
 script to split a pdf into the individual sheets
@@ -44,7 +50,7 @@ if __name__=="__main__": # ls_to_excel is run from command line
     # source file option
     if args.mapping:
         if args.source.find(".xl") > 0:
-            print("not done yet. only the default is ready")
+            print("[*] Not done yet. only the default is ready")
             quit()
             
             df = pd.read_excel(cur_dir+"\\"+args.source).to_numpy() # import mapping
@@ -56,10 +62,10 @@ if __name__=="__main__": # ls_to_excel is run from command line
                 with open(outname, "wb") as outputStream:
                     output.write(outputStream)
         elif args.source.find(".txt") > 0:
-            print(".txt is not implemented yet. please use an excel file.")
+            print("[*] .txt is not implemented yet. please use an excel file.")
             quit()
         else:
-            print("The source file was not found. Please check the spelling.")
+            print("[*] The source file was not found. Please check the spelling.")
             quit()
     else:
         f_suffix = " - PG "
