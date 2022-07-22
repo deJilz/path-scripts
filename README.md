@@ -1,4 +1,4 @@
-# path-scripts
+# Useful tidbit scripts
 scripts that are useful and versatile
 
 i include these scripts in my python path scripts folder to be used anywhere on my computer
