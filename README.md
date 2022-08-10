@@ -13,3 +13,4 @@ these mainly focus on file manipulation
 | split  | script to split a pdf into single sheet files. options to have default " - PG N" added to the end or specify an excel doc with mappings for names  |
 | withcomments  | script to rename pdfs and add " with III comments MMDDYY" to the end of file names. for use after review of drawings at work  |
 | add_file  | script to add and/or delete files from subdirectories  |
+| create_fldrs  | script to read text file and create directories and subdirectories  |
