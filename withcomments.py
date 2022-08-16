@@ -17,7 +17,8 @@ Includes options to:
 - do recursively
 
 """
-
+print("success")
+quit()
 if __name__=="__main__": # ls_to_excel is run from command line
 	# instantiate arg parser
     parser = argparse.ArgumentParser(description='script to add \" with III comments MMDDYY\" to pdf files')
